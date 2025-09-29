@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee - Travel Requests</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="employee.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary mb-4">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Travel Request</span>
+    <div class="d-flex align-items-center">
+        <button class="btn btn-outline-light btn-sm" id="logoutBtn">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container mb-4">
+  <h4> Travel Request Form </h4>
+  <form id="requestForm" class="row g-3">
+    <input type="hidden" id="requestId" />
+
+    <div class="col-md-4">
+      <label class="form-label">Employee ID</label>
+      <input type="text" class="form-control" id="empId" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Employee Name</label>
+      <input type="text" class="form-control" id="empName" required>
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Project</label>
+      <input type="text" class="form-control" id="project" required>
+    </div>
+
+    <div class="col-md-6">
+      <label class="form-label">Cause of Travel</label>
+      <input type="text" class="form-control" id="cause" required>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Destination</label>
+      <input type="text" class="form-control" id="destination" required>
+    </div>
+
+    <div class="col-md-3">
+      <label class="form-label">From Date</label>
+      <input type="date" class="form-control" id="fromDate" required>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">To Date</label>
+      <input type="date" class="form-control" id="toDate" required>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">No. of Days</label>
+      <input type="number" class="form-control" id="noOfDays" readonly>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Mode of Travel</label>
+      <input type="text" class="form-control" id="mode" required>
+    </div>
+
+    <div class="col-12">
+      <label class="form-label">Reason</label>
+      <textarea class="form-control" id="reason" rows="2" required></textarea>
+    </div>
+
+    <div class="col-md-3">
+      <label class="form-label">Priority</label>
+      <select class="form-select" id="priority" required>
+        <option value="normal">Normal</option>
+        <option value="critical">Critical</option>
+      </select>
+    </div>
+
+    <div class="col-12">
+      <button type="submit" class="btn btn-success" id="saveBtn">Submit</button>
+      <button type="button" class="btn btn-secondary d-none" id="cancelEditBtn">Cancel Edit</button>
+    </div>
+  </form>
+</div>
+
+<div class="container">
+  <h4>Your Requests</h4>
+  <ul class="nav nav-tabs" id="statusTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#pendingTab" type="button" role="tab">Pending</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#approvedTab" type="button" role="tab">Approved</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#rejectedTab" type="button" role="tab">Rejected</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#holdTab" type="button" role="tab">On Hold</button>
+    </li>
+  </ul>
+  <div class="tab-content p-3 border border-top-0" id="tabContent">
+    <div class="tab-pane fade show active" id="pendingTab" role="tabpanel"></div>
+    <div class="tab-pane fade" id="approvedTab" role="tabpanel"></div>
+    <div class="tab-pane fade" id="rejectedTab" role="tabpanel"></div>
+    <div class="tab-pane fade" id="holdTab" role="tabpanel"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="employee.js"></script>
+</body>
+</html>

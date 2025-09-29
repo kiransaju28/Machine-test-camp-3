@@ -1,0 +1,16 @@
+body {
+    background: linear-gradient(135deg, #000bd4, #8f94fb);
+}
+
+.card {
+    border: none;
+}
+
+.card h3 {
+    font-weight: 600;
+}
+
+#loginForm .form-control:focus {
+    box-shadow: none;
+    border-color: #4e54c8;
+}

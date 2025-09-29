@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Manage Requests</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Travel Requests</span>
+    <div class="d-flex align-items-center">
+        <span class="text-light me-3" id="welcomeUser"></span>
+        <button class="btn btn-outline-light btn-sm" id="logoutBtn">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h4>Requests by Priority</h4>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#criticalTab" type="button" role="tab">Critical</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" data-bs-toggle="tab" data-bs-target="#normalTab" type="button" role="tab">Normal</button>
+    </li>
+  </ul>
+  <div class="tab-content p-3 border border-top-0">
+    <div class="tab-pane fade show active" id="criticalTab" role="tabpanel"></div>
+    <div class="tab-pane fade" id="normalTab" role="tabpanel"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>
